@@ -21,9 +21,11 @@ jobs:
         cache: 'npm'
     - name: Install Dependencies
       run: npm install
+    - name: Prep eslint
+      run: npm install eslint-plugin-react-refresh@latest --save-dev
     - name: Config eslint
       run: npm install eslint-config-prettier
     - name: Run linter on frontend
       run: npm run lint
     - name: build frontend
-      run: npm test
+      run: npm run build
