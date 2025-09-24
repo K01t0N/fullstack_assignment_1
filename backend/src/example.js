@@ -2,13 +2,16 @@ import { initDatabase } from "./db/init.js"
 
 import { Post } from './db/models/post.js'
 
+import dotenv from 'dotenv'
+dotenv.config()
+
 await initDatabase()
 
 const post = new Post({
-    title: 'Hello Mongoose!',
-    author: "First Last",
-    contents: 'This post is stored in a MongoDB database using Mongoose.',
-    tags: ['mongoose', 'mongodb'],
+    title: 'Hello Sixth Post!',
+    author: 'John Doe',
+    contents: 'This is my new exciting content.',
+    tags: ['frontend'],
 })
 const createdPost = await post.save()
 

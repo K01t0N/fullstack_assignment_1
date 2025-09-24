@@ -34,7 +34,7 @@ export function postsRoutes(app) {
     })
     app.post('/api/v1/posts', async (req, res) => {
         try {
-            const post = await createPost(req.params.id, req.body)
+            const post = await createPost(req.body)
             return res.json(post)
         } catch (err) {
             console.error('error creating post', err)
