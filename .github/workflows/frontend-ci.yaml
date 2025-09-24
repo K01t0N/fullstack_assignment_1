@@ -23,7 +23,7 @@ jobs:
       run: npm install
     - name: Run linter on frontend
       run: npm run lint
-    # - name: Config eslint
-    #   run: npm install eslint-config-prettier
+    - name: Config eslint
+      run: npm install eslint-config-prettier
     - name: build frontend
       run: npm test
