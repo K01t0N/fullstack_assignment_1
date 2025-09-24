@@ -24,9 +24,9 @@ jobs:
           cache: 'npm'
       - name: Install dependencies
         run: npm install
-      - name: Run linter on backend
-        run: npm run lint
       - name: Config eslint
         run: npm install eslint-config-prettier
+      - name: Run linter on backend
+        run: npm run lint
       - name: Run backend tests
         run: npm test
