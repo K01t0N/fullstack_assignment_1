@@ -1,3 +1,4 @@
+/* eslint-disable react-refresh/only-export-components */
 import { createContext, useState, useContext } from 'react'
 import PropTypes from 'prop-types'
 export const AuthContext = createContext({
@@ -5,7 +6,7 @@ export const AuthContext = createContext({
     setToken: () => {},
 })
 export const AuthContextProvider = ({ children }) => {
-    const [ token, setToken] = useState(null)
+    const [token, setToken] = useState(null)
     return (
         <AuthContext.Provider value={{ token, setToken }}>
             {children}
