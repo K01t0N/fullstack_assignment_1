@@ -8,8 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     environment:
       name: production
-      url: https://blog-frontend-1058572838805.us-east1.run.app
-      # ${{ steps.deploy-frontend.outputs.url }}
+      url: ${{ steps.deploy-frontend.outputs.url }}
     steps:
       - uses: actions/checkout@v3
       - name: Login to Docker Hub
@@ -42,8 +41,7 @@ jobs:
           file: ./Dockerfile
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/blog-frontend:latest
-          build-args: VITE_BACKEND_URL=https://blog-backend-1058572838805.us-east1.run.app
-          # ${{ steps.deploy-backend.outputs.url }}
+          build-args: VITE_BACKEND_URL=${{ steps.deploy-backend.outputs.url }}
       - id: deploy-frontend
         name: Deploy frontend
         uses: google-github-actions/deploy-cloudrun@v1
