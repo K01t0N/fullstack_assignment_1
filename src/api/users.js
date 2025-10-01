@@ -1,5 +1,5 @@
 export const signup = async({ username, password }) => {
-    const res = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/v1/user/signup`, { // --------------------- 400
+    const res = await fetch(`${import.meta.env.VITE_BACKEND_URL}/user/signup`, { // --------------------- 400
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ username, password }),
@@ -9,7 +9,7 @@ export const signup = async({ username, password }) => {
 }
 
 export const login = async({ username, password }) => {
-    const res = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/v1/user/login`, { // --------------------- 400
+    const res = await fetch(`${import.meta.env.VITE_BACKEND_URL}/user/login`, { // --------------------- 400
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ username, password }),
