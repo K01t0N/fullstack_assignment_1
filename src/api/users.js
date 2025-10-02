@@ -1,5 +1,5 @@
 export const signup = async({ username, password }) => {
-    const res = await fetch(`https://blog-backend-1058572838805.us-east1.run.app/api/v1/user/signup`, { // ${import.meta.env.VITE_BACKEND_URL}
+    const res = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/v1/user/signup`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ username, password }),
@@ -9,7 +9,7 @@ export const signup = async({ username, password }) => {
 }
 
 export const login = async({ username, password }) => {
-    const res = await fetch(`https://blog-backend-1058572838805.us-east1.run.app/api/v1/user/login`, {
+    const res = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/v1/user/login`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ username, password }),
